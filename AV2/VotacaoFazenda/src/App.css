@@ -1,0 +1,309 @@
+/* Estilos das páginas e componentes específicos da votação. */
+
+.pagina {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 3rem) 1.25rem 2rem;
+}
+
+.pagina-cabecalho {
+  margin-bottom: 1.5rem;
+}
+
+.pagina-cabecalho h1 {
+  color: var(--palha);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.pagina-cabecalho > p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--papel);
+}
+
+/* Questão 3: grid responsivo para os três participantes da roça. */
+.grade-roca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Questão 3: grade responsiva para os demais participantes. */
+.grade-demais {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.participante-card {
+  position: relative;
+  min-width: 0;
+  padding: 0.7rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 3px solid rgba(43, 26, 12, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.22), 0 10px 18px rgba(0, 0, 0, 0.16);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.participante-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.2), 0 14px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* Questão 3: destaque obrigatório para os participantes na roça. */
+.card-roca {
+  border: 4px solid var(--celeiro);
+  padding: 0.65rem;
+}
+
+.participante-foto {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--madeira);
+}
+
+.participante-nome {
+  margin: 0.55rem 0 0.7rem;
+  text-align: center;
+  font-family: var(--fonte-titulo);
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.selo-roca {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  color: #fff;
+  background: var(--celeiro);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  transform: rotate(4deg);
+}
+
+.botao-votar {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.7rem;
+  box-shadow: 0 3px 0 #7c1f19;
+}
+
+.grade-demais .participante-card {
+  padding: 0.5rem;
+  border-width: 2px;
+}
+
+.grade-demais .participante-nome {
+  margin: 0.4rem 0 0.15rem;
+  font-family: var(--fonte-texto);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.secao-demais {
+  margin-top: 2.2rem;
+}
+
+.secao-demais h2 {
+  color: var(--palha);
+  font-size: 1.55rem;
+  margin-bottom: 0.25rem;
+}
+
+.texto-secundario {
+  margin: 0 0 1rem;
+  color: var(--papel);
+  opacity: 0.85;
+}
+
+.mensagem-voto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--pasto);
+  border-radius: 10px;
+  color: var(--tinta);
+  background: #edf2dd;
+}
+
+.mensagem-voto p {
+  margin: 0.25rem 0 0;
+}
+
+.link-destaque {
+  flex-shrink: 0;
+  color: #234a1a;
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
+/* Página de resultado. */
+.pagina-resultado {
+  max-width: 1080px;
+}
+
+.total-votos {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.total-votos strong {
+  color: var(--palha);
+  font-family: var(--fonte-titulo);
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.placar {
+  display: grid;
+  gap: 1rem;
+}
+
+.placar-item {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.8rem;
+  border: 3px solid transparent;
+  border-radius: 9px;
+  color: var(--tinta);
+  background: var(--papel);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.placar-lider {
+  border-color: var(--celeiro);
+}
+
+.placar-foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.placar-conteudo {
+  min-width: 0;
+}
+
+.placar-titulo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.55rem;
+}
+
+.placar-titulo h2 {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+.selo-lider {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--celeiro);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* Questão 3: a barra esconde o excesso e anima o preenchimento. */
+.barra {
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d8c8a7;
+}
+
+.barra-preenchida {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--madeira);
+  transition: width 0.55s ease;
+}
+
+.placar-lider .barra-preenchida {
+  background: var(--celeiro);
+}
+
+.placar-estatistica {
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+}
+
+.resultado-vazio {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.resultado-vazio h2 {
+  margin-bottom: 0.7rem;
+  font-size: 1.7rem;
+}
+
+.resultado-vazio p {
+  margin: 0 0 1.2rem;
+}
+
+.resultado-acoes {
+  margin-top: 1.8rem;
+}
+
+.botao-zerar {
+  color: var(--papel);
+  box-shadow: inset 0 0 0 2px var(--papel);
+}
+
+@media (max-width: 620px) {
+  .mensagem-voto {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .placar-item {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  .barra {
+    height: 16px;
+  }
+
+  .placar-estatistica {
+    font-size: 0.87rem;
+  }
+
+  .selo-lider {
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .participante-card,
+  .barra-preenchida {
+    transition: none;
+  }
+}
